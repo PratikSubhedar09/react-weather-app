@@ -1,6 +1,6 @@
 import { GET_CITY_WEATHER_PENDING, GET_CITY_WEATHER_FULLFILLED, GET_CITY_WEATHER_REJECTED } from '../actions/getCityWeather';
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = [];
 
 export default function cityWeather(state = INITIAL_STATE, { type, payload }) {
   switch (type) {
@@ -9,9 +9,9 @@ export default function cityWeather(state = INITIAL_STATE, { type, payload }) {
     }
 
     case GET_CITY_WEATHER_FULLFILLED: {
-        return {
-            ...payload,
-        };
+        return [
+          ...payload,
+        ];
     }
 
     case GET_CITY_WEATHER_REJECTED: {

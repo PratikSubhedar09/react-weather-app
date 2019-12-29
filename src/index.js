@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import dotenv from 'dotenv';
 import './index.css';
-import App from './containers/app';
+import App from './App';
 import store from './store';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -3,20 +3,29 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export default function CityList() {
+export default function CityList(props) {
     const [cities, setSelectedCities] = useState([{name: 'Mumbai', checked: false}, {name: 'Hyderabad', checked: false}, {name: 'Chennai', checked: false}]);
   
     const handleCityCheck = ({ target: { id } }) => {
       const newCitiesState = [...cities];
-      const selectedCity = newCitiesState.find(city => city.name === id);
-      selectedCity.checked = !selectedCity.checked;
+      const targetCity = newCitiesState.find(city => city.name === id);
+      targetCity.checked = !targetCity.checked;
       setSelectedCities(newCitiesState)
     }
   
     const handleSubmit = () => {
-      console.log('submitted', cities);
+      let queryString = '';
+      cities.forEach(city => {
+        if (city.checked) {
+          queryString += `location[]=${city.name}&`;
+        }
+      });
+      if (queryString) {
+        queryString = queryString.substring(0, queryString.length - 1);
+        props.getCityWeather(queryString);
+      }
     }
-  
+
     return (
       <>
         <h5>Select the cities and click on "Get Info" to get their weather info</h5>

@@ -5,6 +5,7 @@ export default {
     getCityWeather: (queryParams) => {
         return getAxiosInstance()
             .get(`/api/weather?${queryParams}`)
+            .then(reponse => reponse.data)
     }
 }
 

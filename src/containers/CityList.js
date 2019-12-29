@@ -1,14 +1,8 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import App from '../App';
+import CityList from '../components/CityList';
 import getCityWeather from '../actions/getCityWeather';
-
-function mapStateToProps(state) {
-  return {
-    ...state
-  };
-}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
@@ -16,4 +10,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(CityList);

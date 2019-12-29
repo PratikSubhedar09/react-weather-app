@@ -26,9 +26,7 @@ function getCityWeatherPending() {
   function getCityWeatherFulfilled(data) {
     return {
       type: GET_CITY_WEATHER_FULLFILLED,
-      payload: {
-        ...data,
-      },
+      payload: data,
     };
   }
   

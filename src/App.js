@@ -5,8 +5,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import CityList from './components/CityList';
-import WeatherDetails from './components/WeatherDetails';
+import CityList from './containers/CityList';
+import WeatherDetails from './containers/WeatherDetails';
 
 import "./App.css";
 
